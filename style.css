@@ -116,33 +116,209 @@ nav a:hover {
 /* Step 2a: Write selector/rule property to position the default position for the skip class element*/
 
 .skip a {
-  position: static;
+  position: absolute;
+  top: -40px;
 }
 
 /* Step 2b: Write selector/rule property to position the skip class element when it is in focus*/
 
 .skip a:focus {
-  position: sticky;
+  position: absolute;
+  top: 20px;
 }
 
 /* Step 3: Write selector/rule property to style all elements when in focus*/
+
+nav a:focus {
+  border: solid 2px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /* Step 4: Write selector/rule property to style the container */
 
 
-/* Step 5: Write selector/rule property to add the background image to the 
-first div in the grid  and place it in the grid. */
+    
+    .container {
+      display: grid;
+      grid-template-columns: 1fr 5fr 1fr;
+      gap: 15px;
+    }
+
+    img {
+      max-width: 100%;
+    }  
+    /* Step 5: Write selector/rule property to add the background image to the 
+    first div in the grid and place it in the grid. */
+    
+    .container > :first-child {
+      grid-column: 1 / span 3;
+      min-height: 500px;
+      background-image: url("../images/header.jpg");
+      background-repeat: no-repeat; /* Parallax effect */
+    }
+    
+    
+    /* Steps 6 and 7: Write the selector/rule properties to add place the next elements in the next
+     four rows in the grid. */
+    
+    .about {
+      grid-column: 2 / span 1;
+      grid-row: 2 / span 1;
+    }
+    
+    .method {
+      grid-column: 2 / span 1;
+      grid-row: 3 / span 1;
+    }
+    
+    .clients {
+      grid-column: 2 / span 1;
+      grid-row: 4 / span 1;
+    }
+    
+    .contact {
+      grid-column: 2 / span 1;
+      grid-row: 5 / span 1;
+    }
+    
+          /*This will be a lot of rules.... but be strategic and combine seletors*/
+    
+    
+     /* Step 8: Write the selector/rule property to style the .text-block class. */
+    
+    .about-image {
+      grid-column: 1 / span 3;
+      grid-row: 2 / span 1;
+      max-height: 600px;
+      max-width: 100%;
+    }
+    
+    .method-image {
+      grid-column: 1 / span 3;
+      grid-row: 3 / span 1;
+      max-height: 600px;
+    }
+    
+    .clients-image {
+      grid-column: 1 / span 3;
+      grid-row: 4 / span 1;
+      max-height: 600px;
+    }
+    
+    .contact-image {
+      grid-column: 1 / span 3;
+      grid-row: 5 / span 1;
+      max-height: 600px;
+    }
+  
+
+.text-block {
+  justify-self: center;
+  align-self: center;
+  text-align: center;
+  max-height: 250px;
+  overflow: scroll;
+}
+
+.text-block:focus {
+  border: solid 2px;
+}
 
 
 
-/* Steps 6 and 7: Write the selector/rule properties to add place the next elements in the next
- four rows in the grid. */
+@media screen and (min-width: 800px) {
 
-      /*This will be a lot of rules.... but be strategic and combine seletors*/
+    nav {
+      text-align: right;
+      padding-top: 30px; 
+      padding-bottom: 30px;
+      padding-left: 0px;
+      padding-right: 0px;
+    }
+
+    .container {
+      grid-template-columns: 50px auto 500px auto 50px;
+    }
+
+    .container > :first-child {
+      grid-column: 1 / span 5;
+    }
+    
+    /* Step 5: Write selector/rule property to add the background image to the 
+    first div in the grid and place it in the grid. */
+    
+    /* Steps 6 and 7: Write the selector/rule properties to add place the next elements in the next
+     four rows in the grid. */
+    
+    .about {
+      grid-column: 3 / span 2;
+      grid-row: 2 / span 1;
+    }
+    
+    .method {
+      grid-column: 2 / span 2;
+      grid-row: 3 / span 1;
+    }
+    
+    .clients {
+      grid-column: 3 / span 2;
+      grid-row: 4 / span 1;
+    }
+    
+    .contact {
+      grid-column: 2 / span 2;
+      grid-row: 5 / span 1;
+    }
+    
+          /*This will be a lot of rules.... but be strategic and combine seletors*/
+    
+    
+     /* Step 8: Write the selector/rule property to style the .text-block class. */
+    
+    .about-image {
+      grid-column: 2 / span 2;
+      grid-row: 2 / span 1;
+    }
+    
+    .method-image {
+      grid-column: 3 / span 2;
+      grid-row: 3 / span 1;
+    }
+    
+    .clients-image {
+      grid-column: 2 / span 2;
+      grid-row: 4 / span 1;
+    }
+    
+    .contact-image {
+      grid-column: 3 / span 2;
+      grid-row: 5 / span 1;
+    }
+  
+}
 
 
- /* Step 8: Write the selector/rule property to style the .text-block class. */
 
 
 /* Add your media query here */
@@ -155,5 +331,7 @@ first div in the grid  and place it in the grid. */
 
 
   /* Steps 11 and 12: Update the grid-column property of the grid's children (where-needed)*/
+
+
 
 
